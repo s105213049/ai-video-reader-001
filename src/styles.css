@@ -76,7 +76,7 @@
   --popover: oklch(0.985 0.012 85);
   --popover-foreground: oklch(0.28 0.06 272);
   /* Buttons & fills: twilight periwinkle blue; pink (primary-glow) stays for text accents */
-  --primary: oklch(0.55 0.13 275);
+  --primary: oklch(0.64 0.11 270);
   --primary-glow: oklch(0.54 0.15 352);
   --primary-foreground: oklch(0.995 0.005 85);
   --secondary: oklch(0.9 0.035 270);
@@ -90,7 +90,7 @@
   --destructive-foreground: oklch(0.99 0.005 25);
   --border: oklch(0.35 0.06 272 / 13%);
   --input: oklch(0.35 0.06 272 / 20%);
-  --ring: oklch(0.55 0.13 275);
+  --ring: oklch(0.64 0.11 270);
   /* Pink, periwinkle, firefly green, moon gold, gingham blue */
   --chart-1: oklch(0.62 0.15 355);
   --chart-2: oklch(0.68 0.09 270);
@@ -99,14 +99,14 @@
   --chart-5: oklch(0.78 0.05 250);
   --sidebar: oklch(0.975 0.012 85);
   --sidebar-foreground: oklch(0.28 0.06 272);
-  --sidebar-primary: oklch(0.55 0.13 275);
+  --sidebar-primary: oklch(0.64 0.11 270);
   --sidebar-primary-foreground: oklch(0.995 0.005 85);
   --sidebar-accent: oklch(0.9 0.035 270);
   --sidebar-accent-foreground: oklch(0.28 0.06 272);
   --sidebar-border: oklch(0.35 0.06 272 / 13%);
-  --sidebar-ring: oklch(0.55 0.13 275);
+  --sidebar-ring: oklch(0.64 0.11 270);
 
-  --gradient-primary: linear-gradient(135deg, oklch(0.52 0.14 278), oklch(0.62 0.11 255));
+  --gradient-primary: linear-gradient(135deg, oklch(0.63 0.11 272), oklch(0.72 0.09 250));
   --gradient-text: linear-gradient(180deg, var(--foreground) 30%, oklch(0.56 0.15 352) 100%);
   --gradient-hero:
     radial-gradient(70% 55% at 50% 0%, oklch(0.72 0.09 272 / 55%) 0%, transparent 70%),
