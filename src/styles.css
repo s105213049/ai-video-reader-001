@@ -1,6 +1,6 @@
 /*
  * Tailwind v4 entry: config lives here, with no tailwind.config.js or PostCSS plugin.
- * Keep every @import in this top block. Web fonts load via <link> in index.html.
+ * Keep every @import in this top block. Web fonts (Nunito, Fredoka, Huninn 粉圓, JetBrains Mono) load via <link> in index.html.
  */
 @import "tailwindcss" source(none);
 @source "../src";
@@ -15,7 +15,8 @@
  */
 
 @theme inline {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Nunito", "Huninn", ui-rounded, ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fredoka", "Huninn", ui-rounded, ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
   --radius-sm: calc(var(--radius) - 4px);
@@ -142,8 +143,15 @@
     background-attachment: fixed;
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    font-feature-settings: "cv11", "ss01";
     -webkit-font-smoothing: antialiased;
+  }
+
+  /* Rounded, bubbly display face for headings (cute look); body stays in Nunito */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: 0.005em;
   }
 }
 
