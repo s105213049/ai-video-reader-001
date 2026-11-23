@@ -80,7 +80,7 @@ export function RootLayout() {
   return (
     <>
       <Outlet />
-      <Toaster theme="dark" position="top-center" />
+      <Toaster theme="light" position="top-center" />
     </>
   );
 }

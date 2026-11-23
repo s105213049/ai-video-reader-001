@@ -9,7 +9,8 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Video Speed Reader design system — dark, near-black canvas with a violet signal accent.
+ * Video Speed Reader design system — light pearl/silver studio canvas, charcoal ink,
+ * rose-pink signal accent with blush and icy-blue highlights.
  * All colors are oklch tokens; components only use the semantic utilities below.
  */
 
@@ -64,49 +65,62 @@
 
 :root {
   --radius: 0.75rem;
-  --background: oklch(0.13 0.012 285);
-  --foreground: oklch(0.97 0.005 285);
-  --surface: oklch(0.165 0.016 285);
-  --surface-raised: oklch(0.2 0.02 285);
-  --card: oklch(0.17 0.017 285);
-  --card-foreground: oklch(0.97 0.005 285);
-  --popover: oklch(0.17 0.017 285);
-  --popover-foreground: oklch(0.97 0.005 285);
-  --primary: oklch(0.64 0.21 292);
-  --primary-glow: oklch(0.74 0.17 300);
-  --primary-foreground: oklch(0.99 0.005 292);
-  --secondary: oklch(0.22 0.02 285);
-  --secondary-foreground: oklch(0.95 0.005 285);
-  --muted: oklch(0.21 0.015 285);
-  --muted-foreground: oklch(0.68 0.02 285);
-  --accent: oklch(0.25 0.04 292);
-  --accent-foreground: oklch(0.97 0.005 285);
-  --destructive: oklch(0.65 0.2 22);
-  --destructive-foreground: oklch(0.98 0.005 22);
-  --border: oklch(1 0 0 / 9%);
-  --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.64 0.21 292);
-  --chart-1: oklch(0.64 0.21 292);
-  --chart-2: oklch(0.74 0.17 300);
-  --chart-3: oklch(0.7 0.14 250);
-  --chart-4: oklch(0.8 0.12 320);
-  --chart-5: oklch(0.6 0.18 270);
-  --sidebar: oklch(0.165 0.016 285);
-  --sidebar-foreground: oklch(0.97 0.005 285);
-  --sidebar-primary: oklch(0.64 0.21 292);
-  --sidebar-primary-foreground: oklch(0.99 0.005 292);
-  --sidebar-accent: oklch(0.22 0.02 285);
-  --sidebar-accent-foreground: oklch(0.97 0.005 285);
-  --sidebar-border: oklch(1 0 0 / 9%);
-  --sidebar-ring: oklch(0.64 0.21 292);
+  /* Pearl studio canvas: cool silver-white, charcoal ink */
+  --background: oklch(0.955 0.004 255);
+  --foreground: oklch(0.24 0.012 260);
+  --surface: oklch(0.975 0.003 255);
+  --surface-raised: oklch(0.99 0.002 255);
+  --card: oklch(0.99 0.002 255);
+  --card-foreground: oklch(0.24 0.012 260);
+  --popover: oklch(0.99 0.002 255);
+  --popover-foreground: oklch(0.24 0.012 260);
+  /* Rose-pink signal accent (the hair), readable on pearl */
+  --primary: oklch(0.6 0.13 2);
+  --primary-glow: oklch(0.55 0.12 355);
+  --primary-foreground: oklch(0.995 0.002 0);
+  --secondary: oklch(0.92 0.006 255);
+  --secondary-foreground: oklch(0.26 0.012 260);
+  --muted: oklch(0.93 0.005 255);
+  --muted-foreground: oklch(0.48 0.015 255);
+  --accent: oklch(0.94 0.03 355);
+  --accent-foreground: oklch(0.42 0.1 355);
+  --destructive: oklch(0.58 0.2 25);
+  --destructive-foreground: oklch(0.99 0.005 25);
+  --border: oklch(0.24 0.012 260 / 10%);
+  --input: oklch(0.24 0.012 260 / 16%);
+  --ring: oklch(0.6 0.13 2);
+  /* Rose, blush, icy blue (the eyes), silver, deep rose */
+  --chart-1: oklch(0.6 0.13 2);
+  --chart-2: oklch(0.8 0.08 350);
+  --chart-3: oklch(0.68 0.09 235);
+  --chart-4: oklch(0.75 0.01 255);
+  --chart-5: oklch(0.48 0.12 355);
+  --sidebar: oklch(0.975 0.003 255);
+  --sidebar-foreground: oklch(0.24 0.012 260);
+  --sidebar-primary: oklch(0.6 0.13 2);
+  --sidebar-primary-foreground: oklch(0.995 0.002 0);
+  --sidebar-accent: oklch(0.92 0.006 255);
+  --sidebar-accent-foreground: oklch(0.24 0.012 260);
+  --sidebar-border: oklch(0.24 0.012 260 / 10%);
+  --sidebar-ring: oklch(0.6 0.13 2);
 
-  --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-glow));
-  --gradient-text: linear-gradient(180deg, var(--foreground) 30%, oklch(0.78 0.08 295) 100%);
+  --gradient-primary: linear-gradient(135deg, oklch(0.6 0.13 2), oklch(0.68 0.11 340));
+  --gradient-text: linear-gradient(180deg, var(--foreground) 35%, oklch(0.58 0.12 355) 100%);
   --gradient-hero:
-    radial-gradient(60% 50% at 50% 0%, oklch(0.64 0.21 292 / 28%) 0%, transparent 70%),
-    radial-gradient(40% 35% at 85% 20%, oklch(0.74 0.17 300 / 12%) 0%, transparent 70%);
-  --shadow-glow: 0 0 0 1px oklch(0.64 0.21 292 / 40%), 0 10px 40px -10px oklch(0.64 0.21 292 / 60%);
-  --shadow-card: 0 1px 0 0 oklch(1 0 0 / 5%) inset, 0 20px 50px -25px oklch(0 0 0 / 70%);
+    radial-gradient(60% 50% at 50% 0%, oklch(0.85 0.07 355 / 55%) 0%, transparent 70%),
+    radial-gradient(40% 35% at 85% 20%, oklch(0.88 0.05 230 / 45%) 0%, transparent 70%),
+    radial-gradient(45% 40% at 10% 30%, oklch(1 0 0 / 70%) 0%, transparent 70%);
+  --gradient-studio: radial-gradient(
+    120% 90% at 50% 0%,
+    oklch(0.975 0.003 255) 0%,
+    oklch(0.945 0.005 255) 55%,
+    oklch(0.9 0.006 255) 100%
+  );
+  --shadow-glow:
+    0 0 0 1px oklch(0.6 0.13 2 / 35%), 0 10px 32px -10px oklch(0.6 0.13 2 / 55%);
+  --shadow-card:
+    0 1px 0 0 oklch(1 0 0 / 90%) inset, 0 1px 2px 0 oklch(0.3 0.01 260 / 6%),
+    0 18px 40px -24px oklch(0.3 0.02 260 / 35%);
 }
 
 @layer base {
@@ -115,11 +129,13 @@
   }
 
   html {
-    color-scheme: dark;
+    color-scheme: light;
   }
 
   body {
     background-color: var(--color-background);
+    background-image: var(--gradient-studio);
+    background-attachment: fixed;
     color: var(--color-foreground);
     font-family: var(--font-sans);
     font-feature-settings: "cv11", "ss01";
@@ -152,8 +168,8 @@
 
 @utility bg-grid {
   background-image:
-    linear-gradient(oklch(1 0 0 / 4%) 1px, transparent 1px),
-    linear-gradient(90deg, oklch(1 0 0 / 4%) 1px, transparent 1px);
+    linear-gradient(oklch(0.24 0.012 260 / 5%) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(0.24 0.012 260 / 5%) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 30%, transparent 75%);
 }
