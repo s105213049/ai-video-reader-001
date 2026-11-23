@@ -37,7 +37,8 @@ Import the repo in Vercel. `vercel.json` sets the Vite framework preset, the `di
 directory, and a catch-all rewrite to `/index.html`, so deep links like `/app` load the SPA
 and resolve on the client.
 
-Required environment variables (already in `.env`; set them in Vercel if you remove that file):
+Backend: your own Supabase project (`ktnycqogkstujhmvutpa`). Required environment variables
+(in `.env` locally; **add them manually in Vercel → Project → Settings → Environment Variables**):
 
 - `VITE_SUPABASE_URL`
 - `VITE_SUPABASE_PUBLISHABLE_KEY`

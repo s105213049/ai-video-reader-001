@@ -4,7 +4,6 @@ import { useQueryClient } from "@tanstack/react-query";
 
 import { Toaster } from "@/components/ui/sonner";
 import { supabase } from "@/integrations/supabase/client";
-import { reportLovableError } from "@/lib/lovable-error-reporting";
 
 export function NotFoundPage() {
   return (
@@ -33,7 +32,6 @@ export function RootErrorPage() {
 
   useEffect(() => {
     console.error(error);
-    reportLovableError(error, { boundary: "react_router_root_error_element" });
   }, [error]);
 
   return (

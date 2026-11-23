@@ -1,37 +1,12 @@
-<!-- LOVABLE:BEGIN -->
 > [!IMPORTANT]
-> This project is connected to [Lovable](https://lovable.dev). Avoid rewriting
-> published git history — force pushing, or rebasing/amending/squashing commits
-> that are already pushed — as it rewrites history on Lovable's side and the
-> user will likely lose their project history.
->
-> Commits you push to the connected branch sync back to Lovable and show up in
-> the editor, so keep the branch in a working state.
-
-## What Lovable manages
-
-Rules outside this block are the project's own. Change the pieces below in
-Lovable, not by hand. With the [Lovable MCP](https://mcp.lovable.dev)
-connected, `send_message` asks Lovable to do it; otherwise ask the user to
-use the editor.
-
-- **Database.** Do not add or edit `supabase/migrations/` or `drizzle/`.
-  Ask Lovable to change the schema.
-- **Generated files.** Do not edit a file whose header says it is automatically
-  generated.
-- **AI gateway.** Keep model calls on Lovable's gateway, and keep
-  `LOVABLE_API_KEY` out of browser code.
-- **Connectors.** Lovable provides native connectors. `list_connectors` shows
-  which are enabled; `add_connector` only returns the dashboard link. When a
-  connector is enabled, calls go through the connector gateway and need
-  `LOVABLE_API_KEY`. When Lovable does not provide one, users can bring their
-  own key and store it in Secrets.
-- **Secrets.** Lovable manages them. Do not put secret values in the repo.
-<!-- LOVABLE:END -->
+> Avoid rewriting published git history (force pushing, or rebasing/amending/squashing
+> commits that are already pushed). Keep `main` in a working state.
 
 ## Project rules
 
 - The app is a plain Vite + React SPA (no SSR) using React Router; routes are declared in `src/routes.tsx`, page components live in `src/pages/`, and `vercel.json` rewrites every path to `index.html` so deep links resolve client-side.
-- Auth uses Lovable Cloud email/password only; signed-in pages are children of the `authenticated` route in `src/routes.tsx`, whose loader redirects to `/auth` when there is no user — keeps the session check in one place.
-- No custom database tables yet (only built-in auth users) — later milestones add them via migrations.
+- Backend is the project's own Supabase project (`ktnycqogkstujhmvutpa`). The single Supabase client is `src/integrations/supabase/client.ts`; it reads `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` from `import.meta.env` — never hardcode URLs or keys.
+- Auth is Supabase email/password only; signed-in pages are children of the `authenticated` route in `src/routes.tsx`, whose loader redirects to `/auth` when there is no user — keeps the session check in one place.
+- Only browser-safe keys (the `sb_publishable_*` key) may appear in client code or `.env`. Never commit a secret/service-role key.
+- No custom database tables yet (only built-in auth users) — later milestones add them via migrations in `supabase/migrations/`.
 - All colors, gradients and shadows are tokens/utilities in `src/styles.css`; components use semantic classes and Button variants (`hero`, `glass`) — keeps the theme consistent.
