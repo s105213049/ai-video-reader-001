@@ -9,8 +9,8 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Video Speed Reader design system — light pearl/silver studio canvas, charcoal ink,
- * rose-pink signal accent with blush and icy-blue highlights.
+ * Video Speed Reader design system — dreamy twilight sky: periwinkle-to-cream canvas,
+ * indigo ink, cotton-candy pink signal accent, firefly-mint glow and starlight.
  * All colors are oklch tokens; components only use the semantic utilities below.
  */
 
@@ -65,62 +65,66 @@
 
 :root {
   --radius: 0.75rem;
-  /* Pearl studio canvas: cool silver-white, charcoal ink */
-  --background: oklch(0.955 0.004 255);
-  --foreground: oklch(0.24 0.012 260);
-  --surface: oklch(0.975 0.003 255);
-  --surface-raised: oklch(0.99 0.002 255);
-  --card: oklch(0.99 0.002 255);
-  --card-foreground: oklch(0.24 0.012 260);
-  --popover: oklch(0.99 0.002 255);
-  --popover-foreground: oklch(0.24 0.012 260);
-  /* Rose-pink signal accent (the hair), readable on pearl */
-  --primary: oklch(0.6 0.13 2);
-  --primary-glow: oklch(0.55 0.12 355);
-  --primary-foreground: oklch(0.995 0.002 0);
-  --secondary: oklch(0.92 0.006 255);
-  --secondary-foreground: oklch(0.26 0.012 260);
-  --muted: oklch(0.93 0.005 255);
-  --muted-foreground: oklch(0.48 0.015 255);
-  --accent: oklch(0.94 0.03 355);
-  --accent-foreground: oklch(0.42 0.1 355);
+  /* Twilight-sky canvas: periwinkle blue fading to cloud cream, indigo ink */
+  --background: oklch(0.93 0.03 275);
+  --foreground: oklch(0.28 0.06 272);
+  --surface: oklch(0.975 0.012 85);
+  --surface-raised: oklch(0.99 0.008 85);
+  --card: oklch(0.985 0.012 85);
+  --card-foreground: oklch(0.28 0.06 272);
+  --popover: oklch(0.985 0.012 85);
+  --popover-foreground: oklch(0.28 0.06 272);
+  /* Cotton-candy pink signal accent (blouse, lamp, butterfly) */
+  --primary: oklch(0.62 0.15 355);
+  --primary-glow: oklch(0.54 0.15 352);
+  --primary-foreground: oklch(0.995 0.005 85);
+  --secondary: oklch(0.9 0.035 270);
+  --secondary-foreground: oklch(0.3 0.06 272);
+  --muted: oklch(0.91 0.025 275);
+  --muted-foreground: oklch(0.47 0.045 272);
+  /* Firefly-jar mint glow */
+  --accent: oklch(0.94 0.07 135);
+  --accent-foreground: oklch(0.42 0.12 142);
   --destructive: oklch(0.58 0.2 25);
   --destructive-foreground: oklch(0.99 0.005 25);
-  --border: oklch(0.24 0.012 260 / 10%);
-  --input: oklch(0.24 0.012 260 / 16%);
-  --ring: oklch(0.6 0.13 2);
-  /* Rose, blush, icy blue (the eyes), silver, deep rose */
-  --chart-1: oklch(0.6 0.13 2);
-  --chart-2: oklch(0.8 0.08 350);
-  --chart-3: oklch(0.68 0.09 235);
-  --chart-4: oklch(0.75 0.01 255);
-  --chart-5: oklch(0.48 0.12 355);
-  --sidebar: oklch(0.975 0.003 255);
-  --sidebar-foreground: oklch(0.24 0.012 260);
-  --sidebar-primary: oklch(0.6 0.13 2);
-  --sidebar-primary-foreground: oklch(0.995 0.002 0);
-  --sidebar-accent: oklch(0.92 0.006 255);
-  --sidebar-accent-foreground: oklch(0.24 0.012 260);
-  --sidebar-border: oklch(0.24 0.012 260 / 10%);
-  --sidebar-ring: oklch(0.6 0.13 2);
+  --border: oklch(0.35 0.06 272 / 13%);
+  --input: oklch(0.35 0.06 272 / 20%);
+  --ring: oklch(0.62 0.15 355);
+  /* Pink, periwinkle, firefly green, moon gold, gingham blue */
+  --chart-1: oklch(0.62 0.15 355);
+  --chart-2: oklch(0.68 0.09 270);
+  --chart-3: oklch(0.82 0.17 135);
+  --chart-4: oklch(0.86 0.1 85);
+  --chart-5: oklch(0.78 0.05 250);
+  --sidebar: oklch(0.975 0.012 85);
+  --sidebar-foreground: oklch(0.28 0.06 272);
+  --sidebar-primary: oklch(0.62 0.15 355);
+  --sidebar-primary-foreground: oklch(0.995 0.005 85);
+  --sidebar-accent: oklch(0.9 0.035 270);
+  --sidebar-accent-foreground: oklch(0.28 0.06 272);
+  --sidebar-border: oklch(0.35 0.06 272 / 13%);
+  --sidebar-ring: oklch(0.62 0.15 355);
 
-  --gradient-primary: linear-gradient(135deg, oklch(0.6 0.13 2), oklch(0.68 0.11 340));
-  --gradient-text: linear-gradient(180deg, var(--foreground) 35%, oklch(0.58 0.12 355) 100%);
+  --gradient-primary: linear-gradient(135deg, oklch(0.62 0.15 355), oklch(0.66 0.13 330));
+  --gradient-text: linear-gradient(180deg, var(--foreground) 30%, oklch(0.56 0.15 352) 100%);
   --gradient-hero:
-    radial-gradient(60% 50% at 50% 0%, oklch(0.85 0.07 355 / 55%) 0%, transparent 70%),
-    radial-gradient(40% 35% at 85% 20%, oklch(0.88 0.05 230 / 45%) 0%, transparent 70%),
-    radial-gradient(45% 40% at 10% 30%, oklch(1 0 0 / 70%) 0%, transparent 70%);
-  --gradient-studio: radial-gradient(
-    120% 90% at 50% 0%,
-    oklch(0.975 0.003 255) 0%,
-    oklch(0.945 0.005 255) 55%,
-    oklch(0.9 0.006 255) 100%
+    radial-gradient(70% 55% at 50% 0%, oklch(0.72 0.09 272 / 55%) 0%, transparent 70%),
+    radial-gradient(35% 30% at 15% 25%, oklch(0.86 0.08 355 / 55%) 0%, transparent 70%),
+    radial-gradient(30% 28% at 85% 30%, oklch(0.99 0.01 85 / 80%) 0%, transparent 70%),
+    radial-gradient(25% 22% at 50% 85%, oklch(0.9 0.16 135 / 22%) 0%, transparent 70%);
+  --gradient-studio: linear-gradient(
+    180deg,
+    oklch(0.84 0.06 272) 0%,
+    oklch(0.92 0.035 280) 40%,
+    oklch(0.96 0.02 330) 75%,
+    oklch(0.97 0.015 85) 100%
   );
   --shadow-glow:
-    0 0 0 1px oklch(0.6 0.13 2 / 35%), 0 10px 32px -10px oklch(0.6 0.13 2 / 55%);
+    0 0 0 1px oklch(0.62 0.15 355 / 35%), 0 10px 30px -10px oklch(0.62 0.15 355 / 55%),
+    0 0 40px -8px oklch(0.88 0.17 135 / 35%);
   --shadow-card:
-    0 1px 0 0 oklch(1 0 0 / 90%) inset, 0 1px 2px 0 oklch(0.3 0.01 260 / 6%),
-    0 18px 40px -24px oklch(0.3 0.02 260 / 35%);
+    0 1px 0 0 oklch(1 0 0 / 90%) inset, 0 1px 2px 0 oklch(0.35 0.06 272 / 8%),
+    0 18px 40px -24px oklch(0.35 0.08 272 / 40%);
 }
 
 @layer base {
@@ -168,10 +172,16 @@
 
 @utility bg-grid {
   background-image:
-    linear-gradient(oklch(0.24 0.012 260 / 5%) 1px, transparent 1px),
-    linear-gradient(90deg, oklch(0.24 0.012 260 / 5%) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 30%, transparent 75%);
+    radial-gradient(1.5px 1.5px at 12% 18%, oklch(1 0 0 / 95%) 50%, transparent 51%),
+    radial-gradient(1px 1px at 27% 42%, oklch(1 0 0 / 80%) 50%, transparent 51%),
+    radial-gradient(2px 2px at 41% 12%, oklch(0.97 0.05 90 / 90%) 50%, transparent 51%),
+    radial-gradient(1px 1px at 58% 33%, oklch(1 0 0 / 85%) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 73% 8%, oklch(1 0 0 / 90%) 50%, transparent 51%),
+    radial-gradient(1px 1px at 86% 47%, oklch(0.97 0.05 90 / 85%) 50%, transparent 51%),
+    radial-gradient(2px 2px at 93% 22%, oklch(1 0 0 / 90%) 50%, transparent 51%),
+    radial-gradient(1px 1px at 5% 55%, oklch(1 0 0 / 75%) 50%, transparent 51%);
+  background-size: 360px 280px;
+  mask-image: radial-gradient(ellipse 80% 65% at 50% 0%, black 35%, transparent 80%);
 }
 
 /* Scroll reveal: elements start hidden and fade up once visible (see Reveal component). */
