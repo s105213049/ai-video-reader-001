@@ -28,3 +28,9 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- Auth uses Lovable Cloud email/password only; signed-in pages live under `src/routes/_authenticated/` (client-only gate redirecting to `/auth`) — keeps the session check in one place.
+- No custom database tables yet (only built-in auth users) — later milestones add them via migrations.
+- All colors, gradients and shadows are tokens/utilities in `src/styles.css`; components use semantic classes and Button variants (`hero`, `glass`) — keeps the theme consistent.
