@@ -31,6 +31,7 @@ use the editor.
 
 ## Project rules
 
-- Auth uses Lovable Cloud email/password only; signed-in pages live under `src/routes/_authenticated/` (client-only gate redirecting to `/auth`) — keeps the session check in one place.
+- The app is a plain Vite + React SPA (no SSR) using React Router; routes are declared in `src/routes.tsx`, page components live in `src/pages/`, and `vercel.json` rewrites every path to `index.html` so deep links resolve client-side.
+- Auth uses Lovable Cloud email/password only; signed-in pages are children of the `authenticated` route in `src/routes.tsx`, whose loader redirects to `/auth` when there is no user — keeps the session check in one place.
 - No custom database tables yet (only built-in auth users) — later milestones add them via migrations.
 - All colors, gradients and shadows are tokens/utilities in `src/styles.css`; components use semantic classes and Button variants (`hero`, `glass`) — keeps the theme consistent.

@@ -1,31 +1,11 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router";
 import { ArrowRight, Clock, ShieldCheck, Sparkles } from "lucide-react";
 
 import { Reveal } from "@/components/reveal";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { Button } from "@/components/ui/button";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Video Speed Reader — 上傳影片，三分鐘內拿到逐字稿" },
-      {
-        name: "description",
-        content:
-          "Upload your video, get a clean transcript in three minutes. Whisper-powered transcripts in Chinese and English for creators, educators and engineers.",
-      },
-      { property: "og:title", content: "Video Speed Reader — transcripts in three minutes" },
-      {
-        property: "og:description",
-        content: "Upload your video, get a clean, accurate transcript in three minutes.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: Index,
-});
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const features = [
   {
@@ -54,7 +34,13 @@ const transcript = [
   { t: "00:14", line: "三分鐘後，逐字稿就會寄到你的信箱。" },
 ];
 
-function Index() {
+export default function IndexPage() {
+  usePageMeta({
+    title: "Video Speed Reader — 上傳影片，三分鐘內拿到逐字稿",
+    description:
+      "Upload your video, get a clean transcript in three minutes. Whisper-powered transcripts in Chinese and English for creators, educators and engineers.",
+  });
+
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />

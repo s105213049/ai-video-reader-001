@@ -1,5 +1,5 @@
 import { useEffect, useState, type FormEvent } from "react";
-import { Link, useNavigate } from "@tanstack/react-router";
+import { Link, useNavigate } from "react-router";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -22,7 +22,7 @@ export function AuthCard({ mode }: { mode: Mode }) {
   // Already signed in? Skip straight to the app.
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
-      if (data.session) navigate({ to: "/app", replace: true });
+      if (data.session) navigate("/app", { replace: true });
     });
   }, [navigate]);
 
@@ -42,14 +42,14 @@ export function AuthCard({ mode }: { mode: Mode }) {
         });
         if (error) throw error;
         if (data.session) {
-          navigate({ to: "/app", replace: true });
+          navigate("/app", { replace: true });
         } else {
           setCheckEmail(true);
         }
       } else {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) throw error;
-        navigate({ to: "/app", replace: true });
+        navigate("/app", { replace: true });
       }
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "Something went wrong");

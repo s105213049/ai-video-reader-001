@@ -1,27 +1,20 @@
-import { createFileRoute } from "@tanstack/react-router";
+import type { User } from "@supabase/supabase-js";
+import { useRouteLoaderData } from "react-router";
 import { LogOut, UploadCloud } from "lucide-react";
 
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
+import { usePageMeta } from "@/hooks/use-page-meta";
 import { useSignOut } from "@/hooks/use-sign-out";
+import { AUTHENTICATED_ROUTE_ID } from "@/lib/route-ids";
 
-export const Route = createFileRoute("/_authenticated/app")({
-  head: () => ({
-    meta: [
-      { title: "Dashboard — Video Speed Reader" },
-      { name: "description", content: "Your Video Speed Reader dashboard." },
-      { property: "og:title", content: "Dashboard — Video Speed Reader" },
-      { property: "og:description", content: "Your Video Speed Reader dashboard." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "robots", content: "noindex" },
-    ],
-  }),
-  component: AppHome,
-});
-
-function AppHome() {
-  const { user } = Route.useRouteContext();
+export default function AppPage() {
+  const { user } = useRouteLoaderData(AUTHENTICATED_ROUTE_ID) as { user: User };
+  usePageMeta({
+    title: "Dashboard — Video Speed Reader",
+    description: "Your Video Speed Reader dashboard.",
+    noindex: true,
+  });
   const signOut = useSignOut();
 
   return (

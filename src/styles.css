@@ -1,6 +1,6 @@
 /*
  * Tailwind v4 entry: config lives here, with no tailwind.config.js or PostCSS plugin.
- * Keep every @import in this top block. Web fonts load via <link> in src/routes/__root.tsx.
+ * Keep every @import in this top block. Web fonts load via <link> in index.html.
  */
 @import "tailwindcss" source(none);
 @source "../src";
